@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { createState, flap, reset, resize, update, type GameState } from "@/game/engine";
 import { render } from "@/game/renderer";
 import { audio } from "@/game/audio";
+import { showInterstitial } from "@/ads";
 
 const BEST_KEY = "rocket-flap-best";
+const AD_EVERY = 3;
 
 export function RocketFlapGame() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const stateRef = useRef<GameState | null>(null);
+  const crashCount = useRef(0);
   const [, force] = useState(0);
   const [muted, setMuted] = useState(false);
 
@@ -47,6 +50,10 @@ export function RocketFlapGame() {
             localStorage.setItem(BEST_KEY, String(s.best));
           }
           audio.die();
+          crashCount.current += 1;
+          if (crashCount.current % AD_EVERY === 0) {
+            showInterstitial();
+          }
         },
       });
       render(ctx, s);

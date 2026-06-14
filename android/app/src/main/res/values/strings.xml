@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Rocket Ride Space</string>
-    <string name="title_activity_main">Rocket Ride Space</string>
-    <string name="package_name">com.rocketride.space</string>
-    <string name="custom_url_scheme">com.rocketride.space</string>
+    <string name="app_name">Rocket Flap</string>
+    <string name="title_activity_main">Rocket Flap</string>
+    <string name="package_name">com.ytRocket.Flap</string>
+    <string name="custom_url_scheme">com.ytRocket.Flap</string>
 </resources>

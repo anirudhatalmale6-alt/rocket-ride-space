@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.rocketride.space"
+    namespace "com.ytRocket.Flap"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.rocketride.space"
+        applicationId "com.ytRocket.Flap"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -16,10 +16,19 @@ android {
             ignoreAssetsPattern '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            storeFile file('rocket-flap-release.keystore')
+            storePassword 'RocketFlap2026!'
+            keyAlias 'rocket-flap-key'
+            keyPassword 'RocketFlap2026!'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 }

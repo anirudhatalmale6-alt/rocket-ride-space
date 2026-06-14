@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.capacitor/
+android/app/build/
+android/.gradle/
+android/build/
+android/capacitor-android/build/
+android/capacitor-community-admob/build/
+android/capacitor-cordova-android-plugins/build/
+*.apk
+*.aab
+test-screenshot.png
